@@ -1,6 +1,5 @@
-import DS from 'ember-data';
+import ActiveModelAdapter from 'active-model-adapter';
 
-export default DS.RESTAdapter.extend({
-  namespace: 'v1',
-  host: 'localhost:3000'
+export default ActiveModelAdapter.extend({
+  namespace: 'api/v1',
 });
