@@ -6,6 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('notebooks', function() {
+    this.route('notebook', {path: "/:notebook_id"}, function() {
+      this.route('sheets', function() {
+        this.route('sheet',{path: "/:sheet_id"});
+      });
+    });
+  });
 });
 
 export default Router;
