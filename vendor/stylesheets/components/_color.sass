@@ -1,0 +1,54 @@
+=gb($bg1, $dir, $bg2)
+  background: #{$bg1}
+  background: -webkit-linear-gradient(to #{$dir}, #{$bg1}, #{$bg2})
+  background: linear-gradient(to #{$dir}, #{$bg1}, #{$bg2})
+  .mainmenu-block
+    background: #{$bg1}
+    background: -webkit-linear-gradient(to #{$dir}, #{$bg1}, #{$bg2})
+    background: linear-gradient(to #{$dir}, #{$bg1}, #{$bg2})
+    .dot
+       border-color: #{$bg1}
+
+.orchid
+  +gb(rgba(17, 47, 91, 0.81), bottom, #A9548B)
+
+.cadetblue
+  +gb(#457fca, top, #5691c8)
+
+.joomla
+  +gb(#1e3c72, top, #2a5298)
+
+.influenza
+  +gb(#C04848, top, #480048)
+
+.moss
+  +gb(#134E5E, bottom, #71B280)
+
+.mirage
+  +gb(#16222A, bottom, #3A6073)
+
+.stellar
+  +gb(#7474BF, bottom, #348AC7)
+
+.servquick
+  +gb(#485563, top, #29323c)
+
+.f-dark
+  background: #34495E
+  .mainmenu-block .dot
+    border-color: #34495E
+
+.f-dark-blue
+  background: #304F7F
+  .mainmenu-block .dot
+    border-color: #304F7F
+
+.f-blue
+  background: #366EAA
+  .mainmenu-block .dot
+    border-color: #366EAA
+
+.f-green
+  background: #288578
+  .mainmenu-block .dot
+    border-color: #288578

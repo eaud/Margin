@@ -1,3 +1,33 @@
-<h2 id="title">Welcome to Ember</h2>
+<body class="stellar">
 
-{{outlet}}
+  <div class="container">
+    <header class="navbar">
+      A HEADER WILL GO HERE JUST TO GIVE US SOME ROOM
+    </header>
+    <h2 id="title">MARGIN</h2>
+    <div class="mainmenu-block">
+      <ul> EVENTUALLY,a Notebook here
+        <li>this</li>
+        <li>is</li>
+        <li>where</li>
+        <li>the</li>
+        <li>Sheets</li>
+        <li>go!</li>
+
+      </ul>
+    </div>
+    <div class="main-wrapper">
+      <div class="view-wrapper">
+        <div class="col-md-12">
+          This is where we will outlet to various notes
+        </div>
+        {{outlet}}
+      </div>
+    </div>
+
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
