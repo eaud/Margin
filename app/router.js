@@ -13,6 +13,10 @@ Router.map(function() {
       });
     });
   });
+  this.route('users');
+  this.route('tags');
+  this.route('todoLists');
+  this.route('todos');
 });
 
 export default Router;
