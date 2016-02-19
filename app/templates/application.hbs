@@ -2,7 +2,13 @@
 
   <div class="container">
     <header class="navbar">
-      A HEADER WILL GO HERE JUST TO GIVE US SOME ROOM
+      <div class="">
+        {{#if session.isAuthenticated}}
+        <a {{action 'invalidateSession'}}>Logout</a>
+      {{else}}
+        {{#link-to 'login'}}Login{{/link-to}}
+      {{/if}}
+      </div>
     </header>
     <h2 id="title">MARGIN</h2>
     <div class="mainmenu-block">

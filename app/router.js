@@ -21,13 +21,14 @@ const Router = Ember.Router.extend({
 // });
 
 Router.map(function() {
- this.route('notebooks', function() {
-   this.route('notebook', {path: ':notebook_id'}, function(){
-      this.route('sheets', { resetNamespace: true }, function(){
-        this.route('sheet', {path: ':sheet_id'});
-      });
-   });
- });
+  this.route('notebooks', function() {
+    this.route('notebook', {path: ':notebook_id'}, function(){
+       this.route('sheets', { resetNamespace: true }, function(){
+         this.route('sheet', {path: ':sheet_id'});
+       });
+    });
+  });
+  this.route('login');
 });
 
 
