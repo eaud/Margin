@@ -19,8 +19,8 @@ export default Ember.Component.extend({
         '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
         '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css',
         '//www.tinymce.com/css/codepen.min.css'
-      ]      
-
+      ]
+      
     },
 
     didInsertElement: function() {

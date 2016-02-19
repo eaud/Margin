@@ -6,28 +6,26 @@
     </header>
     <h2 id="title">MARGIN</h2>
     <div class="mainmenu-block">
-      <ul> EVENTUALLY,a Notebook here
+      {{outlet}}
+      <ul>
         <li>this</li>
         <li>is</li>
         <li>where</li>
         <li>the</li>
-        <li>Sheets</li>
+        <li>Notebooks\Sheets</li>
         <li>go!</li>
-
       </ul>
     </div>
     <div class="main-wrapper">
       <div class="view-wrapper">
         <div class="col-md-12">
-          This is where we will outlet to various notes
+          <h1>[title of note sheet will go here]</h1>
         </div>
         <div class="text-editor-wrapper">
-            <h1>My text editor - eventually we'll fill this with each sheet title</h1>
-
+            <h1 style="color:#fff;">.</h1>
             {{text-editor value=myBoundValue}}
         </div>
 
-        {{outlet}}
       </div>
     </div>
 
