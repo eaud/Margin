@@ -15,3 +15,6 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+
+# to keep from resetting the heroku version
+/app/adapters/application.js
