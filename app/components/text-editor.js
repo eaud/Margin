@@ -14,7 +14,13 @@ export default Ember.Component.extend({
         codesample: '/tinymce/plugins/codesample/plugin.min.js'
       },
       menubar: false,
-      toolbar1: 'bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image code codesample'
+      toolbar1: 'bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image code codesample',
+      content_css: [
+        '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+        '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css',
+        '//www.tinymce.com/css/codepen.min.css'
+      ]      
+
     },
 
     didInsertElement: function() {
