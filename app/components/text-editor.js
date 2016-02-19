@@ -9,10 +9,12 @@ export default Ember.Component.extend({
       external_plugins: {
         image: '/tinymce/plugins/image/plugin.min.js',
         link: '/tinymce/plugins/link/plugin.min.js',
-        table: '/tinymce/plugins/table/plugin.min.js'
+        table: '/tinymce/plugins/table/plugin.min.js',
+        code: '/tinymce/plugins/code/plugin.min.js',
+        codesample: '/tinymce/plugins/codesample/plugin.min.js'
       },
       menubar: false,
-      toolbar1: 'bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image | code'
+      toolbar1: 'bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image code codesample'
     },
 
     didInsertElement: function() {
