@@ -4,7 +4,7 @@
     <header class="navbar">
       <div class="">
         {{#if session.isAuthenticated}}
-        <a {{action 'invalidateSession'}}>Logout</a>
+        <a {{action 'logout'}}>Logout</a>
       {{else}}
         {{#link-to 'login'}}Login{{/link-to}}
       {{/if}}
