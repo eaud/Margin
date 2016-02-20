@@ -1,0 +1,16 @@
+<form {{action 'addUser' on='submit'}}>
+  <label for="name">Name</label>
+  {{input id='name' placeholder='Name' value=name}}
+  <label for="email">Email</label>
+  {{input id='email' placeholder='Email' value=email}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  <label for="password_confirmation">Confirm Password</label>
+  {{input id='password_confirmation' placeholder='Confirm Password' type='password' value=password_confirmation}}
+  <button type="submit">Sign Up</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>
+
+{{outlet}}
