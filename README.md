@@ -8,7 +8,12 @@ This repo contains the Ember.js frontend, which pairs with a Rails-API, [found h
 
 ## About
 
-Margin is a project by [@kaylee42](https://github.com/kaylee42), [@jappleba](https://github.com/jappleba), and [@eaud](https://github.com/eaud)
+Margin is a project by [@kaylee42](https://github.com/kaylee42), [@jappleba](https://github.com/jappleba), and [@eaud](https://github.com/eaud) while at Flatiron School.  Margin is intended to be a utility app for programmers taking notes about code.
+
+## Thanks
+
+- TinyMCE: a beautiful little JS text editor.
+- @SophieDebenedetto, @StevenNunez, @JoshuaBamboo who are great instructors at Flatiron School (or something).
 
 ## Prerequisites
 
