@@ -2,26 +2,36 @@
 
   <div class="container">
     <header class="navbar">
-      A HEADER WILL GO HERE JUST TO GIVE US SOME ROOM
+      <div class="">
+        {{#if session.isAuthenticated}}
+        <a {{action 'logout'}}>Logout</a>
+      {{else}}
+        {{#link-to 'login'}}Login{{/link-to}}
+      {{/if}}
+      </div>
     </header>
     <h2 id="title">MARGIN</h2>
     <div class="mainmenu-block">
-      <ul> EVENTUALLY,a Notebook here
+      {{outlet}}
+      <ul>
         <li>this</li>
         <li>is</li>
         <li>where</li>
         <li>the</li>
-        <li>Sheets</li>
+        <li>Notebooks\Sheets</li>
         <li>go!</li>
-
       </ul>
     </div>
     <div class="main-wrapper">
       <div class="view-wrapper">
         <div class="col-md-12">
-          This is where we will outlet to various notes
+          <h1>[title of note sheet will go here]</h1>
         </div>
-        {{outlet}}
+        <div class="text-editor-wrapper">
+            <h1 style="color:#fff;">.</h1>
+            {{text-editor value=myBoundValue}}
+        </div>
+
       </div>
     </div>
 
