@@ -1,1 +1,14 @@
+<ul>
+
+{{#each model as |notebook|}}
+  <li>{{#link-to "notebooks.notebook" notebook}}{{notebook.title}}{{/link-to}}</li>
+    <ul>
+      {{#each notebook.sheets as |sheet|}}
+        <li>{{#link-to "sheets.sheet" sheet }}{{sheet.title}}{{/link-to}}</li>  
+      {{/each}}
+    </ul>
+{{/each}}
+
+</ul>
+
 {{outlet}}
