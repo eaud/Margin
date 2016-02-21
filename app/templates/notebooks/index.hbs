@@ -1,12 +1,12 @@
 <ul>
-    {{#each model as |notebook|}}
-    <li> {{notebook.title}} </li>
-    {{/each}}
-</ul>
 
+{{#each model as |notebook|}}
+  <li>{{#link-to "notebooks.notebook" notebook}}{{notebook.title}}{{/link-to}}</li>
+    <ul>
+      {{#each notebook.sheets as |sheet|}}
+        <li>{{#link-to "sheets.sheet" sheet }}{{sheet.title}}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+{{/each}}
 
-<ul>
-  <li id="todos">
-     {{#link-to 'todos' class="todos"}}Todos{{/link-to}}
-  </li>
 </ul>
