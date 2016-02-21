@@ -7,11 +7,13 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin,{
   },
   actions: {
     addUser(){
-      debugger;
       let user = this.modelFor(this.routeName);
-      user.save().then(()=>{
-        this.transitionTo('application');
+      user.save().then((savedUser)=>{
+        console.log('successful' + savedUser)
+        this.transitionTo('login');
+      }).catch((reason)=>{
+        console.log('Handle rejected promise ('+reason+') here.');
       })
-    }
   }
+}
 });
