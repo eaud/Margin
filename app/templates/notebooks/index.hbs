@@ -1,0 +1,12 @@
+<ul>
+    {{#each model as |notebook|}}
+    <li> {{notebook.title}} </li>
+    {{/each}}
+</ul>
+
+
+<ul>
+  <li id="todos">
+     {{#link-to 'todos' class="todos"}}Todos{{/link-to}}
+  </li>
+</ul>
