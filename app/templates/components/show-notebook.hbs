@@ -1,0 +1,21 @@
+{{#if isEditing}}
+
+ <form class="form-horizontal" {{action 'submit' on="submit"}}>
+   <label for="title">Title</label>
+   {{input value=notebook.title id="title"}}
+
+   <label for="description" class="col-lg-2 control-label">URL</label>
+   {{input value=notebook.description id="description"}}
+
+   <button id="submit" class="btn btn-primary" type="submit">Save</button>
+ </form>
+
+ {{else}}
+ <h4 {{action 'edit'}}>{{notebook.title}}</h4>
+ <p id="description">
+   description: {{notebook.description}}
+ </p>
+
+ {{/if}}
+
+ {{yield}}

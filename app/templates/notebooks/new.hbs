@@ -1,0 +1,11 @@
+<form class="form-horizontal">
+     <label for="title">Title</label>
+
+    {{input value=model.title id="title"}}
+
+    <label for="description" class="col-lg-2 control-label">Description</label>
+    {{input value=model.description id="description"}}
+
+
+    <button id="submit" {{action 'save'}} class="btn btn-primary">Save</button>
+  </form>
