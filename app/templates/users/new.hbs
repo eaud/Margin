@@ -1,3 +1,14 @@
+   {{#if model.errors.length}}
+      <div class='alert alert-danger'>
+        <h5>Could not sign up due to the following:</h5>
+        <ul>
+          {{#each model.errors as |error|}}
+            <li>{{error.attribute}} {{error.message}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    {{/if}}
+
 <form {{action 'addUser' on='submit'}}>
   <label for="name">Name</label>
   {{input id='name' placeholder='Name' value=model.name}}
@@ -8,9 +19,6 @@
   <label for="password_confirmation">Confirm Password</label>
   {{input id='password_confirmation' placeholder='Confirm Password' type='password' value=model.password_confirmation}}
   <button type="submit">Sign Up</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
 </form>
 
 {{outlet}}

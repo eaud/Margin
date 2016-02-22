@@ -12,7 +12,6 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin,{
         console.log('successful' + savedUser)
         this.transitionTo('login');
       }).catch((reason)=>{
-        console.log('Handle rejected promise ('+reason+') here.');
       })
   }
 }
