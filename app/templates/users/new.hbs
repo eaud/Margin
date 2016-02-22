@@ -3,7 +3,7 @@
         <h5>Could not sign up due to the following:</h5>
         <ul>
           {{#each model.errors as |error|}}
-            <li>{{error.attribute}} {{error.message}}</li>
+            <li>{{error.message}}</li>
           {{/each}}
         </ul>
       </div>
