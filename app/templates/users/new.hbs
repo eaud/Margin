@@ -1,4 +1,4 @@
-{{#if model.errors.length}}
+   {{#if model.errors.length}}
       <div class='alert alert-danger'>
         <h5>Could not sign up due to the following:</h5>
         <ul>
@@ -19,9 +19,6 @@
   <label for="password_confirmation">Confirm Password</label>
   {{input id='password_confirmation' placeholder='Confirm Password' type='password' value=model.password_confirmation}}
   <button type="submit">Sign Up</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
 </form>
 
 {{outlet}}
