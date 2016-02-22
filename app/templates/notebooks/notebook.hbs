@@ -4,3 +4,11 @@
   {{outlet}}
 
 </ul>
+
+<div>
+
+  {{show-notebook saveChanges=(action "update") notebook=model}}
+
+  <p><button {{action 'delete'}} id="delete">Delete</button></p>
+
+ </div>

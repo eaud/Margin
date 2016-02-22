@@ -15,6 +15,7 @@ Router.map(function() {
     });
   });
   this.route('notebooks', function() {
+    this.route('new');
     this.route('notebook', {path: ':notebook_id'}, function(){
       this.route('sheets', { resetNamespace: true }, function(){
         this.route('sheet', {path: ':sheet_id'});
