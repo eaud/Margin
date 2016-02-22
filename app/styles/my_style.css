@@ -1,3 +1,8 @@
 h2#title {
   color: #fff;
 }
+
+#unauthorized{
+  height: 1000px;
+  color: #fff;
+}
