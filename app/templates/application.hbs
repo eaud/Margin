@@ -20,13 +20,24 @@
     </div>
     <div class="main-wrapper">
       <div class="view-wrapper">
-        <div class="col-md-12">
-          <h1>[title of note sheet will go here]</h1>
-        </div>
-        <div class="text-editor-wrapper">
-            <h1 style="color:#fff;">.</h1>
-            {{text-editor value=myBoundValue}}
-        </div>
+        {{#if session.isAuthenticated}}
+          <div class="col-md-12">
+            <h1>[title of note sheet will go here]</h1>
+          </div>
+          <div class="text-editor-wrapper">
+              <h1 style="color:#fff;">.</h1>
+              {{text-editor value=myBoundValue}}
+          </div>
+        {{else}}
+          <div class="col-md-12">
+            <h4>
+              Hi there! Margin is coming soon... (like, any day! ETA 02/24/16!)
+            </h4>
+            <p>
+              Come back soon for an excellent Ember.js-based single page app to take your code notes.
+            </p>
+          </div>
+        {{/if}}
 
       </div>
     </div>
