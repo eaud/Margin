@@ -13,14 +13,9 @@
     </header>
     <h2 id="title">MARGIN</h2>
     <div class="mainmenu-block">
-      {{outlet}}
+      {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
       <ul>
-        <li>this</li>
-        <li>is</li>
-        <li>where</li>
-        <li>the</li>
-        <li>Notebooks\Sheets</li>
-        <li>go!</li>
+        {{outlet}}
       </ul>
     </div>
     <div class="main-wrapper">
