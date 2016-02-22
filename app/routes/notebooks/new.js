@@ -9,6 +9,7 @@ import Ember from 'ember';
        let model = this.modelFor(this.routeName);
        model.save().then(()=> {
          this.transitionTo("notebooks");
+       }).catch((reason)=>{
        });
      }
    }
