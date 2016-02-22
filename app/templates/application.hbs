@@ -1,11 +1,12 @@
 <body class="stellar">
-
+{{outlet 'modal'}}
   <div class="container">
     <header class="navbar">
       <div class="">
 {{#if session.isAuthenticated}}
         <a {{action 'logout'}}>Logout</a>
 {{else}}
+        <button {{action 'openModal' 'users/new'}}>Open modal</button>
         {{#link-to 'login'}}Login{{/link-to}}
         {{#link-to 'users.new'}}Sign Up{{/link-to}}
 {{/if}}
