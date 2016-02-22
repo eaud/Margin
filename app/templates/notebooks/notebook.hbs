@@ -1,9 +1,6 @@
 {{model.title}}
 <ul>
   <li>Notebook description: {{model.description}}</li>
-  {{#each model.sheets as |sheet|}}
-    <li>{{sheet.title}}</li>
-  {{/each}}
-</ul>
+  {{outlet}}
 
-{{outlet}}
+</ul>
