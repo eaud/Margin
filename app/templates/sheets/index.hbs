@@ -1,7 +1,5 @@
 <ul>
   {{#each model as |sheet|}}
-
-    <li> {{sheet.title}} </li>
-
+    <a><li {{action 'showSheet' sheet}}> {{sheet.title}} </li></a>
   {{/each}}
 </ul>

@@ -1,3 +1,5 @@
-Length:{{model.length}}
-TITLE FOR THE FUCKING SHEET{{model.title}}
-{{outlet}}
+<ul>
+  {{#each model as |sheet|}}
+    <a><li {{action 'showSheet' sheet}}> {{sheet.title}} </li></a>
+  {{/each}}
+</ul>

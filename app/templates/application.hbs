@@ -3,15 +3,16 @@
   <div class="container">
     <header class="navbar">
       <div class="">
-        {{#if session.isAuthenticated}}
+{{#if session.isAuthenticated}}
         <a {{action 'logout'}}>Logout</a>
-      {{else}}
+{{else}}
         {{#link-to 'login'}}Login{{/link-to}}
         {{#link-to 'users.new'}}Sign Up{{/link-to}}
-      {{/if}}
+{{/if}}
       </div>
     </header>
     <h2 id="title">MARGIN</h2>
+{{#if session.isAuthenticated}}
     <div class="mainmenu-block">
       {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
       <ul>
@@ -20,15 +21,12 @@
     </div>
     <div class="main-wrapper">
       <div class="view-wrapper">
-        {{#if session.isAuthenticated}}
-          <div class="col-md-12">
-            <h1>[title of note sheet will go here]</h1>
-          </div>
-          <div class="text-editor-wrapper">
-              <h1 style="color:#fff;">.</h1>
-              {{text-editor value=myBoundValue}}
-          </div>
-        {{else}}
+          {{#if controllers.sheets.currentSheet}}
+            {{show-sheet sheet=controllers.sheets.currentSheet}}
+          {{/if}}
+        </div>
+      </div>
+{{else}}
           <div class="col-md-12">
             <h4>
               Hi there! Margin is coming soon... (like, any day! ETA 02/24/16!)
@@ -37,10 +35,8 @@
               Come back soon for an excellent Ember.js-based single page app to take your code notes.
             </p>
           </div>
-        {{/if}}
+{{/if}}
 
-      </div>
-    </div>
 
 
   </div>
