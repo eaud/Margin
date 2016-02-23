@@ -1,6 +1,6 @@
 {{#if model.errors.length}}
    <div class='alert alert-danger'>
-     <h5>Could not sign up due to the following:</h5>
+     <h5>Could create notebook up due to the following:</h5>
      <ul>
        {{#each model.errors as |error|}}
          <li>{{error.message}}</li>
@@ -8,7 +8,7 @@
      </ul>
    </div>
  {{/if}}
- 
+
 <form class="form-horizontal">
      <label for="title">Title</label>
 

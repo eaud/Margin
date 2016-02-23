@@ -6,9 +6,10 @@
 {{#if session.isAuthenticated}}
         <a {{action 'logout'}}>Logout</a>
 {{else}}
-        {{#link-to 'login'}}Login{{/link-to}}
-        {{#link-to 'users.new'}}Sign Up{{/link-to}}
+        <h5{{action 'renderLogin' 'login'}}>{{#link-to 'login'}}Login{{/link-to}}</h5>
+        <h5{{action 'renderLogin' 'users/new'}}>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
 {{/if}}
+  {{outlet login}}
       </div>
     </header>
     <h2 id="title">MARGIN</h2>
