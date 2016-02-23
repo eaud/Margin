@@ -10,5 +10,6 @@ import Ember from 'ember';
        this.toggleProperty('isEditing');
        this.attrs.saveChanges(this.get("notebook"));
      }
-   }
+   },
+
  });

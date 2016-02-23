@@ -10,5 +10,6 @@ export default Ember.Route.extend({
       resource.destroyRecord();
       this.transitionTo('notebooks');
     }
-  }
+  },
+  
 });

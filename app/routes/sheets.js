@@ -6,5 +6,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
     // return this.store.peekAll('sheet').filter(function(sheet) {console.log(sheet.get('notebooks.length')); return true})
     let notebook = this.modelFor('notebooks.notebook');
     return notebook.get('sheets')
-  }
+  },
 });

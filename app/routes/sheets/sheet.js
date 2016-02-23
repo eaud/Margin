@@ -1,15 +1,12 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin'
 export default Ember.Route.extend(AuthenticatedRouteMixin,{
-  model: function() {
-        return this.store.findAll('notebook');
-  },
-  actions: {
-    goToSheets(notebook){
-      this.transitionTo('sheets', notebook)
-    }
+  model(params){
+    return this.store.findRecord('sheet', params.sheet_id);
   },
   renderTemplate: function() {
-    this.render({ outlet: 'sidebar' });
+    this.render({
+      into: 'application',
+      outlet: 'editor' });
   }
 });
