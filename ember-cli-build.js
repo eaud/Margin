@@ -4,7 +4,7 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var pickFiles = require('broccoli-static-compiler');
 var tinymceAssets = pickFiles('bower_components/tinymce/', {
   srcDir: '/',
-  files: ['**/*.min.js', '**/*.min.css', '**/*.woff', '**/*.ttf'],
+  files: ['**/*.min.js', '**/*.css', '**/*.woff', '**/*.ttf'],
   destDir: '/tinymce'
 });
 
