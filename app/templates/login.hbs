@@ -1,4 +1,4 @@
-
+{{#my-modal}}
     {{#if errorMessage}}
     <div class='alert alert-danger'>
       <h5>Invalid email or password.</h5>
@@ -12,7 +12,4 @@
   {{input id='password' placeholder='Enter Password' type='password' value=password}}
   <button type="submit">Login</button>
 </form>
-
-Or {{#link-to "users.new"}}Sign Up{{/link-to}} if you're new!
-
-{{outlet}}
+{{/my-modal}}
