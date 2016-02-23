@@ -7,8 +7,8 @@ import Ember from 'ember';
    actions: {
      save(){
        let model = this.modelFor(this.routeName);
-       model.save().then(()=> {
-         this.transitionTo("notebooks");
+       model.save().then((savedNotebook)=> {
+         this.transitionTo("notebooks.notebook.sheets", savedNotebook);
        }).catch((reason)=>{
        });
      }

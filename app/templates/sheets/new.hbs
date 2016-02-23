@@ -1,0 +1,21 @@
+{{#if model.errors.length}}
+   <div class='alert alert-danger'>
+     <h5>Could create sheet up due to the following:</h5>
+     <ul>
+       {{#each model.errors as |error|}}
+         <li>{{error.message}}</li>
+       {{/each}}
+     </ul>
+   </div>
+ {{/if}}
+
+<form class="form-horizontal">
+     <label for="title">Title</label>
+
+    {{input value=model.title id="title"}}
+
+    <button id="submit" {{action 'save'}} class="btn btn-primary">Save</button>
+  </form>
+
+
+{{outlet}}
