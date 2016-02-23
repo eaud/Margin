@@ -1,5 +1,2 @@
-<p>
-  THIS SHEET IS TITLED {{model.title}}
-</p>
-LENGTH: {{model.notebooks.length}}
+{{show-sheet sheet=model updateSheet=(action "updateSheet")}}
 {{outlet}}

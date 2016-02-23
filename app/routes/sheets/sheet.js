@@ -4,9 +4,15 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
   model(params){
     return this.store.findRecord('sheet', params.sheet_id);
   },
+  actions: {
+    updateSheet(sheet){
+      sheet.save()
+    }
+  },
   renderTemplate: function() {
     this.render({
       into: 'application',
       outlet: 'editor' });
-  }
+  },
+
 });
