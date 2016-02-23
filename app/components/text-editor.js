@@ -20,7 +20,7 @@ export default Ember.Component.extend({
         '//cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.css',
         '//www.tinymce.com/css/codepen.min.css'
       ]
-      
+
     },
 
     didInsertElement: function() {
@@ -32,8 +32,9 @@ export default Ember.Component.extend({
           // bind change event
           component.set('editor', editor);
           editor.on('change', function() {
-            component.set('value',
+            component.sheet.set('content',
                editor.getContent());
+              component.attrs.updateSheet(component.sheet)
           });
         }
       });

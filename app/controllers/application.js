@@ -7,6 +7,10 @@ export default Ember.Controller.extend({
     logout(){
       this.get('session').invalidate();
     },
+    updateSheet(sheet){
+      sheet.save()
+    }
+
     // showSheet: function(item){
     //   this.get('controllers.sheets').send('currentSheet', item);
     //   }
