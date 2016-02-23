@@ -4,6 +4,6 @@ export default Ember.Controller.extend({
   actions: {
   showSheet: function(item){
     this.set('currentSheet', item);
-    }
-  }
+  },
+
 });
