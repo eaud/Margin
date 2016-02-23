@@ -3,10 +3,16 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
-    openModal: function(modalName) {
+    showModal: function(modalName) {
       return this.render(modalName, {
         into: 'application',
         outlet: 'modal'
+      });
+    },
+    removeModal: function() {
+      this.disconnectOutlet({
+        outlet: 'modal',
+        parentView: 'application'
       });
     }
   }
