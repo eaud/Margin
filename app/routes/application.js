@@ -3,11 +3,11 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
-    renderLogin(templateName){
-      return this.render(templateName, {
+    openModal: function(modalName) {
+      return this.render(modalName, {
         into: 'application',
-        outlet: 'login'
-      })
+        outlet: 'modal'
+      });
     }
   }
 });

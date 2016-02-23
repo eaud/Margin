@@ -10,9 +10,5 @@ export default Ember.Controller.extend({
     updateSheet(sheet){
       sheet.save()
     }
-
-    // showSheet: function(item){
-    //   this.get('controllers.sheets').send('currentSheet', item);
-    //   }
   },
 });

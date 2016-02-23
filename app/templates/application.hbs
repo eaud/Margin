@@ -1,13 +1,17 @@
 <body class="stellar">
-
+{{outlet 'modal'}}
   <div class="container">
     <header class="navbar">
       <div class="">
 {{#if session.isAuthenticated}}
         <a {{action 'logout'}}>Logout</a>
 {{else}}
-        <h5{{action 'renderLogin' 'login'}}>{{#link-to 'login'}}Login{{/link-to}}</h5>
-        <h5{{action 'renderLogin' 'users/new'}}>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
+
+        <!-- <button {{action 'openModal' 'users/new'}}>Open modal</button> -->
+        <h5{{action 'openModal' 'users/new'}}>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
+        {{#link-to 'login'}}Login{{/link-to}}
+        <!-- {{#link-to 'users.new'}}Sign Up{{/link-to}} -->
+
 {{/if}}
   {{outlet login}}
       </div>
