@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   show: function() {
-    debugger;
-   this.$('.modal').modal('show');
+   this.$('.modal').modal();
+   this.transitionTo('users')
  }.on('didInsertElement')
 });
