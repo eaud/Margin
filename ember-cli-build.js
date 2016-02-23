@@ -2,7 +2,7 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var pickFiles = require('broccoli-static-compiler');
-var tinymceAssets = pickFiles('dist/tinymce/', {
+var tinymceAssets = pickFiles('bower_components/tinymce/', {
   srcDir: '/',
   files: ['**/*.min.js', '**/*.css', '**/*.woff', '**/*.ttf'],
   destDir: '/tinymce'
@@ -10,7 +10,11 @@ var tinymceAssets = pickFiles('dist/tinymce/', {
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+        fingerprint: {
+          enabled: false
 
+          // prepend: 'https://subdomain.cloudfront.net/'
+        }
   });
 
   // Use `app.import` to add additional libraries to the generated
