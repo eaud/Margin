@@ -1,7 +1,7 @@
 <ul>
   {{#each model as |notebook|}}
   <li>
-    <h3>{{link-to notebook.title "notebooks.notebook" notebook.id}}</h3>
+    <h3 {{action "goToSheets" notebook}}>{{link-to notebook.title "notebooks.notebook" notebook.id}}</h3>
   </li>
   {{/each}}
 </ul>
