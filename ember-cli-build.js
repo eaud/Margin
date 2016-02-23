@@ -10,9 +10,7 @@ var tinymceAssets = pickFiles('bower_components/tinymce/', {
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    'ember-bootstrap': {
-        'importBootstrapTheme': true
-    }
+
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -29,7 +27,5 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
   app.import('bower_components/tinymce/tinymce.min.js', {destDir: 'assets/tinymce'});
   app.import('bower_components/tinymce/jquery.tinymce.min.js', {destDir: 'assets/tinymce'});
-  app.import('bower_components/bootstrap/dist/js/bootstrap.js');
-  app.import('bower_components/bootstrap/dist/css/bootstrap.css');
   return app.toTree([tinymceAssets]);
 };
