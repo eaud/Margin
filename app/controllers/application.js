@@ -7,8 +7,6 @@ export default Ember.Controller.extend({
     logout(){
       this.get('session').invalidate();
     },
-    updateSheet(sheet){
-      sheet.save()
-    }
+
   },
 });

@@ -13,7 +13,6 @@
         <!-- {{#link-to 'users.new'}}Sign Up{{/link-to}} -->
 
 {{/if}}
-  {{outlet login}}
       </div>
     </header>
     <h2 id="title">MARGIN</h2>
@@ -21,14 +20,13 @@
     <div class="mainmenu-block">
       {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
       <ul>
-        {{outlet}}
+        {{outlet 'sidebar'}}
       </ul>
     </div>
     <div class="main-wrapper">
       <div class="view-wrapper">
-          {{#if controllers.sheets.currentSheet}}
-            {{show-sheet sheet=controllers.sheets.currentSheet updateSheet=(action "updateSheet")}}
-          {{/if}}
+          {{outlet 'editor'}}
+
         </div>
       </div>
 {{else}}

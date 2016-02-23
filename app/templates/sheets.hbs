@@ -1,5 +1,6 @@
 <ul>
   {{#each model as |sheet|}}
-    <a><li {{action 'showSheet' sheet}}> {{sheet.title}} </li></a>
+    <li>{{#link-to 'sheets.sheet' sheet}}{{sheet.title}}{{/link-to}}</li>
   {{/each}}
 </ul>
+{{outlet}}

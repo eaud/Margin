@@ -8,5 +8,8 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
     goToSheets(notebook){
       this.transitionTo('sheets', notebook)
     }
+  },
+  renderTemplate: function() {
+    this.render({ outlet: 'sidebar' });
   }
 });

@@ -9,5 +9,6 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
         outlet: 'modal'
       });
     }
-  }
+  },
+  
 });
