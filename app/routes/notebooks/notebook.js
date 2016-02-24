@@ -11,5 +11,5 @@ export default Ember.Route.extend({
       this.transitionTo('notebooks');
     }
   },
-  
+
 });

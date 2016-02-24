@@ -1,12 +1,17 @@
 <div class="col-md-6">
   {{#if isEditing}}
-    {{input value=sheet.title id="title"}} <button {{action "saveSheet" sheet}}type="button" name="save">Save</button>
+    {{input value=sheet.title id="sheet_title"}} <button {{action "saveSheet" sheet}}type="button" name="save">Save</button>
   {{else}}
     <h1{{action "editSheet" on="doubleClick"}}>{{sheet.title}}</h1>
   {{/if}}
 </div>
 <div class="col-md-4">
-
+  {{#each sheet.tags as |tag|}}
+    {{tag.title}}
+  {{/each}}
+<form {{action "saveTag" on="submit"}}>
+  {{input value=tag.title id="tag_title"}} <button type="submit" name="add_tag">Add Tag</button>
+</form>
 </div>
 <div class="col-md-2">
   <p><button {{action 'deleteSheet' sheet}} id="delete">Delete</button></p>

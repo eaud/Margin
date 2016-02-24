@@ -23,7 +23,8 @@
 
 {{#if session.isAuthenticated}}
     <div class="mainmenu-block">
-      {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
+      <h4>{{#link-to 'notebooks'}}Show Notebooks{{/link-to}}</h4>
+      <h4>{{#link-to 'tags'}}Show Tags{{/link-to}}</h4>
       <ul>
         {{outlet 'sidebar'}}
       </ul>
