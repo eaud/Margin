@@ -1,5 +1,6 @@
-<body class="stellar">
-  <div class="container">
+<body>
+  <div class="doc_header">
+
     <header class="navbar">
       <div class="">
 {{#if session.isAuthenticated}}
@@ -14,41 +15,49 @@
           <h5>{{#link-to 'login'}}Login{{/link-to}}</h5>
         </div>
         <div class="col-md-12">
-          {{outlet login}}
+          {{outlet 'login'}}
         </div>
 {{/if}}
       </div>
     </header>
-    <h2 id="title">{{link-to "MARGIN" 'application'}}</h2>
-
-{{#if session.isAuthenticated}}
-    <div class="mainmenu-block">
-      {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
-      <ul>
-        {{outlet 'sidebar'}}
-      </ul>
-    </div>
-    <div class="main-wrapper">
-      <div class="view-wrapper">
-          {{outlet 'editor'}}
-
-        </div>
-      </div>
-{{else}}
-    <div id="unauthorized">
-
-          <div class="col-md-12">
-            <h4>
-              Hi there! Margin is coming soon... (like, any day! ETA 02/24/16!)
-            </h4>
-            <p>
-              Come back soon for an excellent Ember.js-based single page app to take your code notes.
-            </p>
-          </div>
-    </div>
-{{/if}}
-
-
-
+    <h1 id="title">{{link-to "MARGIN" 'application'}}</h1>
   </div>
+  <div class="doc_wrapper">
+    <div class="container">
+
+
+    {{#if session.isAuthenticated}}
+      <div class="row">
+        <div class="col-md-3 mainmenu-block f-blue">
+            <div class="nav"></div>
+          {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
+          <ul class="nav sidemenu">
+            {{outlet 'sidebar'}}
+          </ul>
+        </div>
+        <div class="main-wrapper">
+          <div class="view-wrapper">
+              {{outlet 'editor'}}
+
+            </div>
+          </div>
+        </div>
+    {{else}}
+        <div id="unauthorized">
+
+              <div class="col-md-12">
+                <h4>
+                  Hi there! Margin is coming soon... (like, any day! ETA 02/24/16!)
+                </h4>
+                <p>
+                  Come back soon for an excellent Ember.js-based single page app to take your code notes.
+                </p>
+              </div>
+        </div>
+    {{/if}}
+
+    </div>
+  </div>
+
+
 </body>

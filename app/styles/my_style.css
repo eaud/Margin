@@ -6,3 +6,16 @@ h2#title {
   height: 1000px;
   color: #fff;
 }
+
+.mce-stack-layout {
+  height: 750px;
+}
+
+.btn {
+  color: #101010;
+}
+
+body {
+  background: url("http://i.dailymail.co.uk/i/pix/2012/11/26/article-2238928-16396F25000005DC-950_1024x615_large.jpg");
+  background-size: cover;
+}
