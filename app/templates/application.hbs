@@ -1,5 +1,4 @@
 <body class="stellar">
-{{outlet 'modal'}}
   <div class="container">
     <header class="navbar">
       <div class="">
@@ -8,10 +7,15 @@
 {{else}}
 
         <!-- <button {{action 'openModal' 'users/new'}}>Open modal</button> -->
-        <h5{{action 'openModal' 'users/new'}}>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
-        {{#link-to 'login'}}Login{{/link-to}}
-        <!-- {{#link-to 'users.new'}}Sign Up{{/link-to}} -->
-        {{outlet}}
+        <div class="col-md-2">
+          <h5>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
+        </div>
+        <div class="col-md-1">
+          <h5>{{#link-to 'login'}}Login{{/link-to}}</h5>
+        </div>
+        <div class="col-md-12">
+          {{outlet login}}
+        </div>
 {{/if}}
       </div>
     </header>
