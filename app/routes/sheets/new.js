@@ -8,13 +8,12 @@ export default Ember.Route.extend({
     save(){
       let model = this.modelFor(this.routeName);
       let notebook = this.modelFor('notebooks.notebook');
-      // model.get('notebooks').addObject(notebook);
       model.set('notebookid', notebook.id);
-      debugger;
       model.save().then((savedSheet)=> {
         this.transitionTo("sheets.sheet", savedSheet);
       }).catch((reason)=>{
       });
     }
-  }
+  },
+  
 });
