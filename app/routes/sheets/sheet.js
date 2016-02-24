@@ -9,11 +9,6 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       into: 'application',
       outlet: 'editor' });
   },
-  actions: {
-    delete(sheet){
-      sheet.destroyRecord();
-      this.transitionTo('sheets');
-    }
-  },
+
 
 });

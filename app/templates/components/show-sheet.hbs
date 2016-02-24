@@ -1,5 +1,9 @@
 <div class="col-md-6">
-  <h1>{{sheet.title}}</h1>
+  {{#if isEditing}}
+    {{input value=sheet.title id="title"}} <button {{action "saveSheet" sheet}}type="button" name="save">Save</button>
+  {{else}}
+    <h1{{action "editSheet" on="doubleClick"}}>{{sheet.title}}</h1>
+  {{/if}}
 </div>
 <div class="col-md-4">
 
