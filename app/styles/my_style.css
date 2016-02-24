@@ -6,3 +6,11 @@ h2#title {
   height: 1000px;
   color: #fff;
 }
+
+.mce-stack-layout {
+  height: 750px;
+}
+
+.btn {
+  color: #101010;
+}
