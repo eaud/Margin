@@ -4,6 +4,10 @@ import Ember from 'ember';
    actions: {
      updateSheet(sheet){
        sheet.save()
+     },
+     delete(sheet){
+       sheet.destroyRecord();
+       this.transitionTo('sheets');
      }
    },
  });

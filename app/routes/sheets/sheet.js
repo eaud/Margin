@@ -10,4 +10,5 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
       outlet: 'editor' });
   },
 
+
 });

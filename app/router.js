@@ -9,8 +9,8 @@ Router.map(function() {
   this.route('todoLists', function(){
     this.route('todoList', {path: ':todoList_id'}, function(){
       this.route('todos', {resetNamespace: true}, function(){
-        this.route('todo', {path: ':todo_id'});
         this.route('new');
+        this.route('todo', {path: ':todo_id'});
       });
     });
   });
@@ -18,6 +18,7 @@ Router.map(function() {
     this.route('new');
     this.route('notebook', {path: ':notebook_id'}, function(){
       this.route('sheets', { resetNamespace: true }, function(){
+        this.route('new');
         this.route('sheet', {path: ':sheet_id'});
       });
     });
