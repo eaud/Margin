@@ -14,5 +14,10 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin,{
       }).catch((reason)=>{
       })
   }
-}
+},
+renderTemplate: function() {
+  this.render({
+    into: 'application',
+    outlet: 'login' });
+},
 });
