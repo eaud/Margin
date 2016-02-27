@@ -1,67 +1,52 @@
-<body>
+<body class="mirage stellar">
   <div class="doc_header">
+    <div class="mainmenu-block">
+      <nav class="menu-block">
+        <ul class="nav">
+          {{#if session.isAuthenticated}}
+          <a {{action 'logout'}}>Logout</a>
+          {{else}}
 
-    <header class="navbar">
-      <div class="">
-{{#if session.isAuthenticated}}
-        <a {{action 'logout'}}>Logout</a>
-{{else}}
-
-        <!-- <button {{action 'openModal' 'users/new'}}>Open modal</button> -->
-        <div class="col-md-2">
-          <h5>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
-        </div>
-        <div class="col-md-1">
-          <h5>{{#link-to 'login'}}Login{{/link-to}}</h5>
-        </div>
-        <div class="col-md-12">
-          {{outlet 'login'}}
-        </div>
-{{/if}}
-      </div>
-    </header>
-    <div class="container">
-    <div class="row">
-      <h1 id="title">{{link-to "MARGIN" 'application'}}</h1>
+          <!-- <button {{action 'openModal' 'users/new'}}>Open modal</button> -->
+          <div class="col-md-2">
+            <h5>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
+          </div>
+          <div class="col-md-1">
+            <h5>{{#link-to 'login'}}Login{{/link-to}}</h5>
+          </div>
+          <div class="col-md-12">
+            {{outlet 'login'}}
+          </div>
+          {{/if}}
+        </ul>
+        <hr>
+        <ul class="nav">
+          {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
+          {{outlet 'sidebar'}}
+        </ul>
+      </nav>
     </div>
   </div>
-  </div>
-  <div class="doc_wrapper">
-    <div class="container">
-
-
-    {{#if session.isAuthenticated}}
-      <div class="row">
-        <div class="col-md-3 mainmenu-block f-blue">
-            <div class="nav"></div>
-          {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
-          <ul class="nav sidemenu">
-            {{outlet 'sidebar'}}
-          </ul>
-        </div>
+      {{#if session.isAuthenticated}}
         <div class="main-wrapper">
           <div class="view-wrapper">
-              {{outlet 'editor'}}
-
+            <div class="topbar-wrapper">
+              <div class="topbar-wrapper-mobile-nav">
+                <a href="#" class="topbar-togger js-minibar-toggler">
+                  <i class="icon ion-ios-arrow-back hidden-md-down"></i>
+                  <i class="icon hidden-lg-up ion-navicon-round"></i>
+                </a>
+                <a href="#" class="topbar-togger pull-xs-right hidden-lg-up js-nav-toggler">
+                  <i class ="icon ion-android-person"></i>
+                </a>
+                <h1 id="title" class="topbar-wrapper-logo demo-logo">{{link-to "MARGIN" 'application'}}</h1>
+              </div>
             </div>
+
+            {{outlet 'editor'}}
+
           </div>
         </div>
-    {{else}}
-        <div id="unauthorized">
-
-              <div class="col-md-12">
-                <h4>
-                  Hi there! Margin is coming soon... (like, any day! ETA 02/24/16!)
-                </h4>
-                <p>
-                  Come back soon for an excellent Ember.js-based single page app to take your code notes.
-                </p>
-              </div>
-        </div>
-    {{/if}}
-
-    </div>
-  </div>
-
-
+      {{else}}
+      {{/if}}
 </body>

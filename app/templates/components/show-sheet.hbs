@@ -1,18 +1,26 @@
-<div class="col-md-6">
+<div class="page-header">
   {{#if isEditing}}
     {{input value=sheet.title id="title"}} <button {{action "saveSheet" sheet}}type="button" class="btn btn-primary" name="save">Save</button>
   {{else}}
-    <h1{{action "editSheet" on="doubleClick"}}>{{sheet.title}}</h1>
+<div class="row">
+
+  <div class="col-md-8">
+      <h1{{action "editSheet" on="doubleClick"}}>{{sheet.title}}</h1>
+
+    </div>
+  <div class="col-md-4">
+    <div class="pull-xs-right">
+      <p><button {{action 'deleteSheet' sheet}} class="btn" id="delete">Delete</button></p>
+    </div>
+  </div>
+</div>
   {{/if}}
 </div>
-<div class="col-md-4">
-
-</div>
-<div class="col-md-2">
-  <p><button {{action 'deleteSheet' sheet}} class="btn" id="delete">Delete</button></p>
-
-</div>
-<div class="text-editor-wrapper">
-    <h1 style="color:#fff;">.</h1>
-    {{text-editor value=sheet.content sheet=sheet updateSheet=attrs.updateSheet}}
+<div class="container-fluid">
+  <div class="row panel-wrapper js-grid-wrapper">
+    <div class="text-editor-wrapper">
+      <h1 style="color:#fff;"></h1>
+      {{text-editor value=sheet.content sheet=sheet updateSheet=attrs.updateSheet}}
+    </div>
+  </div>
 </div>
