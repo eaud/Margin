@@ -4,24 +4,26 @@
       <nav class="menu-block">
         <ul class="nav">
           {{#if session.isAuthenticated}}
-          <a {{action 'logout'}}>Logout</a>
+          <div class="menu-block-label" {{action 'logout'}}>Logout</div>
           {{else}}
 
           <!-- <button {{action 'openModal' 'users/new'}}>Open modal</button> -->
-          <div class="col-md-2">
-            <h5>{{#link-to 'users.new'}}Sign Up{{/link-to}}</h5>
-          </div>
-          <div class="col-md-1">
-            <h5>{{#link-to 'login'}}Login{{/link-to}}</h5>
-          </div>
-          <div class="col-md-12">
-            {{outlet 'login'}}
+            <div class="menu-block-label">{{#link-to 'users.new'}}Sign Up{{/link-to}}</div>
+            <div class="menu-block-label">{{#link-to 'login'}}Login{{/link-to}}</div>
+          <div class="menu-block-label">
+              <div class="row">
+                {{outlet 'login'}}
+              </div>
           </div>
           {{/if}}
         </ul>
         <hr>
         <ul class="nav">
-          {{#link-to 'notebooks'}}Show Notebooks{{/link-to}}
+          {{#link-to 'notebooks'}}
+            <div class="menu-block-label">
+              Show Notebooks
+            </div>
+          {{/link-to}}
           {{outlet 'sidebar'}}
         </ul>
       </nav>
