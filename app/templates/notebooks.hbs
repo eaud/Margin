@@ -3,12 +3,18 @@
 </div>
 <ul class="nav">
   {{#each model as |notebook|}}
-  <li class="nav-item">
+  <li class="menu-block-has-sub nav-item">
     {{#link-to "notebooks.notebook" notebook.id class="nav-link"}}
-      <i class="icon ion-ios-book"></i>
+      <i class="icon ion-ios-book-outline"></i>
     <div class="menu-block-label" {{action "goToSheets" notebook}}>{{notebook.title}}</div>
     {{/link-to}}
+    <ul style="display:block;" class="nav menu-block-sub">
+      {{#each notebook.sheets as |sheet|}}
+        <li>{{#link-to 'sheets.sheet' sheet}}{{sheet.title}}{{/link-to}}</li>
+      {{/each}}
+      <li>{{link-to "New Sheet" "sheets.new"}}</li>
+      {{outlet}}
+    </ul>
   </li>
   {{/each}}
 </ul>
-{{outlet}}

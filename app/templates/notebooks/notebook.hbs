@@ -1,5 +1,13 @@
-<ul>
-  <li>Notebook description: {{model.description}}</li>
+<ul class="nav">
+  <li class="menu-block-has-sub nav-item">
+    <a href="#" class=nav-link>
+      <i class="icon ion-ios-book"></i>
+      <div class="menu-block-label">
+        Currently open: {{model.title}}
+
+      </div>
+    </a>
+  </li>
   {{outlet}}
   <li>{{link-to "New Sheet" "sheets.new"}}</li>
 </ul>

@@ -1,6 +1,6 @@
 {{#if model.errors.length}}
    <div class='alert alert-danger'>
-     <h5>Could create sheet up due to the following:</h5>
+     <p>Could create sheet up due to the following:</p>
      <ul>
        {{#each model.errors as |error|}}
          <li>{{error.message}}</li>
