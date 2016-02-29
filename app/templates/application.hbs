@@ -4,28 +4,32 @@
       <nav class="menu-block">
         <ul class="nav">
           {{#if session.isAuthenticated}}
-          <div class="menu-block-label" {{action 'logout'}}>Logout</div>
+          <li class="nav-item mainmenu-user-profile">
+            <div class="menu-block-label" {{action 'logout'}}>Logout</div>
+          </li>
           {{else}}
 
           <!-- <button {{action 'openModal' 'users/new'}}>Open modal</button> -->
+          <li class="nav-item mainmenu-user-profile">
             <div class="menu-block-label">{{#link-to 'users.new'}}Sign Up{{/link-to}}</div>
             <div class="menu-block-label">{{#link-to 'login'}}Login{{/link-to}}</div>
-          <div class="menu-block-label">
-              <div class="row">
+          </li>
                 {{outlet 'login'}}
-              </div>
-          </div>
           {{/if}}
         </ul>
-        <hr>
+        {{#if session.isAuthenticated}}
         <ul class="nav">
+          <li class="nav-item">
           {{#link-to 'notebooks'}}
             <div class="menu-block-label">
               Show Notebooks
             </div>
           {{/link-to}}
+        </li>
           {{outlet 'sidebar'}}
         </ul>
+        {{else}}
+        {{/if}}
       </nav>
     </div>
   </div>
@@ -50,5 +54,41 @@
           </div>
         </div>
       {{else}}
+        <div class="main-wrapper">
+          <div class="view-wrapper">
+            <div class="topbar-wrapper">
+              <div class="topbar-wrapper-mobile-nav">
+                <a href="#" class="topbar-togger js-minibar-toggler">
+                  <i class="icon ion-ios-arrow-back hidden-md-down"></i>
+                  <i class="icon hidden-lg-up ion-navicon-round"></i>
+                </a>
+                <a href="#" class="topbar-togger pull-xs-right hidden-lg-up js-nav-toggler">
+                  <i class ="icon ion-android-person"></i>
+                </a>
+                <h1 id="title" class="topbar-wrapper-logo demo-logo">{{link-to "MARGIN" 'application'}}</h1>
+              </div>
+            </div>
+            <div class="page-header">
+              <h4 class="page-header-title">
+                Welcome to <strong>MARGIN</strong>, <br><br> a note-taking platform with code-blockenabled formatting.
+              </h4>
+              <hr>
+              <p>
+                - an Ember.js/Rails-API app made with <i class="red ion-heart"></i> by <a href="https://github.com/jappleba">@jappleba</a>, <a href="https://github.com/kaylee42">@kaylee42</a>, & <a href="https://github.com/eaud">@eaud</a>.
+              </p>
+            </div>
+            <div class="container-fluid">
+              <div class="row panel-wrapper js-grid-wrapper">
+                <div class="col-xs-12 col-sm-6 js-grid">
+                  <div  class=panel>
+                    <div class="list-group">
+                      <a class="list-group-item">©2016. Precognitioned, LLC. All rights reserved.</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       {{/if}}
 </body>

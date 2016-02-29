@@ -18,3 +18,7 @@ h2#title {
 .text-editor > * {
   height: 600px;
 }
+
+.red {
+  color: #dc544a
+}

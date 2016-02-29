@@ -11,5 +11,7 @@ export default Ember.Route.extend({
       this.transitionTo('notebooks');
     }
   },
-  
+  renderTemplate: function() {
+    this.render({ outlet: 'editnotebook' });
+  }
 });
