@@ -1,1 +1,13 @@
+{{#each model as |tag|}}
+<li>
+  <h3 {{action "showSheets"}}>{{link-to tag.title "tags.tag" tag.id}}</h3>
+  {{#if sheetsShowing}}
+    <ul>
+      {{#each tag.sheets as |sheet|}}
+        <li>{{link-to sheet.title "sheets.sheet" sheet}}</li>
+      {{/each}}
+    </ul>
+  {{/if}}
+</li>
+{{/each}}
 {{outlet}}

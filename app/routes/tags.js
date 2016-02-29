@@ -6,5 +6,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
   },
   renderTemplate: function() {
     this.render({ outlet: 'sidebar' });
-  }
+  },
+  
+
 });

@@ -23,13 +23,14 @@ Router.map(function() {
       });
     });
   });
-  this.route('tags',), function(){
-    this.route('tag', {path: ':tag_id'})
-  }
   this.route('users', function(){
     this.route('new');
   });
   this.route('login');
+
+  this.route('tags', function() {
+    this.route('tag', {path: ':tag_id'});
+  });
 });
 
 
