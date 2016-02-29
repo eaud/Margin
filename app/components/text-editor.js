@@ -11,7 +11,7 @@ export default Ember.Component.extend({
         link: '/tinymce/plugins/link/plugin.min.js',
         table: '/tinymce/plugins/table/plugin.min.js',
         code: '/tinymce/plugins/code/plugin.min.js',
-        codesample: '/tinymce/plugins/codesample/plugin.min.js'
+        codesample: '/tinymce/plugins/codesample/plugin.min.js',
       },
       menubar: false,
       toolbar1: 'bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link table image code codesample',
@@ -34,7 +34,7 @@ export default Ember.Component.extend({
           editor.on('change', function() {
             component.sheet.set('content',
                editor.getContent());
-              component.attrs.updateSheet(component.sheet)
+              component.attrs.updateSheet(component.sheet);
           });
         }
       });

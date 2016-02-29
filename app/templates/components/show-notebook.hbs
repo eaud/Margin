@@ -1,7 +1,7 @@
 {{#if isEditing}}
 {{#if notebook.errors.length}}
    <div class='alert alert-danger'>
-     <h5>Could not sign up due to the following:</h5>
+     <p>Could not save changes due to the following:</p>
      <ul>
        {{#each notebook.errors as |error|}}
          <li>{{error.message}}</li>
@@ -21,7 +21,7 @@
  </form>
 
  {{else}}
- <h4 {{action 'edit'}}>Edit</h4>
+ <p><button class="btn"{{action 'edit'}}>Edit</button></p>
  {{/if}}
 
  {{yield}}

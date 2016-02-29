@@ -12,5 +12,8 @@ import Ember from 'ember';
        }).catch((reason)=>{
        });
      }
+   },
+   renderTemplate: function() {
+     this.render({ outlet: 'newnotebook' });
    }
  });

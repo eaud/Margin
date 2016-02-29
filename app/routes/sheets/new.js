@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(){
-    return this.store.createRecord('sheet')
+    return this.store.createRecord('sheet');
   },
   actions: {
     save(){
@@ -15,5 +15,10 @@ export default Ember.Route.extend({
       });
     }
   },
-  
+  renderTemplate: function() {
+    this.render({
+      into: 'notebooks',
+      outlet: 'new' });
+  }
+
 });

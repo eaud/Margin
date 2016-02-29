@@ -1,13 +1,18 @@
-<ul>
-  <li>Notebook description: {{model.description}}</li>
-  {{outlet}}
-  <li>{{link-to "New Sheet" "sheets.new"}}</li>
+<hr>
+<ul class="nav">
+  <li class="nav-item">
+    <a href="#" class=nav-link>
+      <i class="icon ion-ios-book"></i>
+      <div class="menu-block-label">
+        Current: {{model.title}}
+
+      </div>
+    </a>
+  </li>
+  <li class="nav-item">
+    <div class="menu-block-label">
+      {{show-notebook saveChanges=(action "update") notebook=model}}
+      <p><button {{action 'delete'}} id="delete" class="btn">Delete notebook</button></p>
+    </div>
+  </li>
 </ul>
-
-<div>
-
-  {{show-notebook saveChanges=(action "update") notebook=model}}
-
-  <p><button {{action 'delete'}} id="delete" class="btn">Delete</button></p>
-
- </div>

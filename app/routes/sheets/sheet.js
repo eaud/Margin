@@ -8,7 +8,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin,{
     this.render({
       into: 'application',
       outlet: 'editor' });
-  },
+  }
 
 
 });

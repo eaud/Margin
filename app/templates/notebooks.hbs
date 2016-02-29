@@ -1,9 +1,27 @@
-<h3>{{link-to "New Notebook" "notebooks.new"}}</h3>
-<ul>
+<div class="menu-block-label">
+  {{link-to "New Notebook" "notebooks.new"}}
+</div>
+  {{outlet 'newnotebook'}}
+<hr>
+<ul class="nav">
   {{#each model as |notebook|}}
-  <li>
-    <h3 {{action "goToSheets" notebook}}>{{link-to notebook.title "notebooks.notebook" notebook.id}}</h3>
+  <li class="menu-block-has-sub nav-item">
+    {{#link-to "notebooks.notebook" notebook.id class="nav-link"}}
+      <i class="icon ion-ios-book-outline"></i>
+      <div class="menu-block-label" {{action "goToSheets" notebook}}>{{notebook.title}}</div>
+    {{/link-to}}
+    <ul class="nav menu-block-sub" style="display:block;">
+      {{#each notebook.sheets as |sheet|}}
+        <li>{{#link-to 'sheets.sheet' sheet}}{{sheet.title}}{{/link-to}}</li>
+      {{/each}}
+      <li>{{link-to "New Sheet" "sheets.new"}}</li>
+    </ul>
   </li>
   {{/each}}
+  <li class="nav-item">
+    {{outlet 'new'}}
+  </li>
+  <li class="nav-item">
+    {{outlet 'editnotebook'}}
+  </li>
 </ul>
-{{outlet}}
